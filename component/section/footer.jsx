@@ -27,6 +27,7 @@ export default function Footer() {
           text-black
           lg:px-16
           lg:py-14
+          rounded-t-[40px]
         "
       >
         <div
