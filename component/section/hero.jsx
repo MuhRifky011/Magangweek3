@@ -55,7 +55,7 @@ export default function Hero() {
         </div>
          <div className="group w-full max-w-[550px] overflow-hidden rounded-[24px] xl:justify-self-end">
         <Image
-             src="/image/Heroimage.svg"
+             src="/image/HeroImage.svg"
              alt="HydroPulse Smart Flood Monitoring Station"
             width={630}
             height={796}
