@@ -402,7 +402,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* ================= DECORATIVE SHAPE ================= */}
+         
         <div
           aria-hidden="true"
           className="

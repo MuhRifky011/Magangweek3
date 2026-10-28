@@ -28,9 +28,10 @@ export default function Navbar() {
         lg:h-[138px]
         lg:px-5
         lg:py-0
+        w-full bg-background
       "
     >
-      {/* MAIN NAVBAR */}
+      {/* NAVBAR */}
       <div
         className="
           flex
@@ -99,7 +100,7 @@ export default function Navbar() {
           </span>
         </Link>
 
-        {/* DESKTOP NAVIGATION */}
+        
         <nav
           aria-label="Main navigation"
           className="
@@ -150,7 +151,7 @@ export default function Navbar() {
           </Link>
         </nav>
 
-        {/* DESKTOP START PROJECT BUTTON */}
+        {/* START PROJECT BUTTON */}
         <Link
           href="/#contact"
           className="
@@ -181,7 +182,7 @@ export default function Navbar() {
           </span>
         </Link>
 
-        {/* MOBILE HAMBURGER */}
+        {/*  HAMBURGER */}
         <button
           type="button"
           onClick={() => setMenuOpen((prev) => !prev)}
