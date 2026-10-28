@@ -18,7 +18,7 @@ export default function Footer() {
       id="contact"
       className="mx-auto w-full max-w-[1440px]"
     >
-      {/* ================= CONTACT SECTION ================= */}
+      
       <section
         className="
           bg-[#73F2E9]
@@ -41,7 +41,7 @@ export default function Footer() {
             lg:gap-16
           "
         >
-          {/* CONTACT TEXT */}
+          
           <div className="max-w-[390px]">
             <h2
               className="
@@ -69,7 +69,7 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* CONTACT FORM */}
+          
           <form
             onSubmit={handleSubmit}
             className="
@@ -83,7 +83,7 @@ export default function Footer() {
               lg:p-8
             "
           >
-            {/* FULL NAME AND EMAIL */}
+            {/* CTA */}
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <div>
                 <label
@@ -148,7 +148,7 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* ORGANIZATION */}
+             
             <div className="mt-4">
               <label
                 htmlFor="organization"
@@ -178,7 +178,7 @@ export default function Footer() {
               />
             </div>
 
-            {/* MESSAGE */}
+             
             <div className="mt-4">
               <label
                 htmlFor="message"
@@ -209,7 +209,7 @@ export default function Footer() {
               />
             </div>
 
-            {/* SEND BUTTON */}
+             
             <button
               type="submit"
               className="
@@ -241,7 +241,7 @@ export default function Footer() {
         </div>
       </section>
 
-      {/* ================= FOOTER BOTTOM ================= */}
+       
       <div
         className="
           relative
@@ -256,7 +256,7 @@ export default function Footer() {
           lg:px-10
         "
       >
-        {/* FOOTER CONTENT */}
+         
         <div
           className="
             relative
@@ -273,7 +273,7 @@ export default function Footer() {
             lg:gap-6
           "
         >
-          {/* KOLOM 1 - LOGO */}
+           
           <div className="flex flex-col gap-4">
             <Link
               href="/#home"
@@ -302,13 +302,13 @@ export default function Footer() {
               </span>
             </Link>
 
-            {/* TAGLINE MOBILE */}
+             
             <p className="text-xs text-white/80 lg:hidden">
               Monitor Water. Detect Risk. Protect Communities.
             </p>
           </div>
 
-          {/* KOLOM 2 - NAVIGATION */}
+           
           <nav
             aria-label="Footer navigation"
             className="
@@ -344,7 +344,7 @@ export default function Footer() {
             </Link>
           </nav>
 
-          {/* KOLOM 3 - SOCIAL MEDIA */}
+           
           <div
             className="
               hidden
@@ -387,7 +387,7 @@ export default function Footer() {
               />
 
               <Image
-                src="/image/Youtube.svg"
+                src="/image/YouTube.svg"
                 alt="YouTube"
                 width={20}
                 height={20}
