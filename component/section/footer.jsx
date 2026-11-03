@@ -6,12 +6,42 @@ import Image from "next/image";
 import { useState } from "react";
 
 export default function Footer() {
-  const [status, setStatus] = useState("");
+   const [status, setStatus] = useState("idle");
+const [pesan, setPesan] = useState("");
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    setStatus("Form belum terhubung ke layanan pengiriman.");
+async function handleSubmit(event) {
+  event.preventDefault();
+
+  const form = event.currentTarget;
+  const data = Object.fromEntries(new FormData(form));
+
+  setStatus("loading");
+  setPesan("");
+
+  try {
+    const response = await fetch("/api/waitlist", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    const result = await response.json();
+
+    if (response.ok) {
+      setStatus("berhasil");
+      setPesan(result.pesan);
+      form.reset();
+    } else {
+      setStatus("gagal");
+      setPesan(result.error ?? "Data gagal dikirim.");
+    }
+  } catch {
+    setStatus("gagal");
+    setPesan("Koneksi bermasalah. Silakan coba lagi.");
   }
+}
 
   return (
     <footer
@@ -96,7 +126,7 @@ export default function Footer() {
 
                 <input
                   id="fullname"
-                  name="fullname"
+                  name="nama"
                   type="text"
                   placeholder="Enter Fullname"
                   autoComplete="name"
@@ -212,30 +242,42 @@ export default function Footer() {
 
              
             <button
-              type="submit"
-              className="
-                mt-4
-                w-full
-                rounded-md
-                bg-[#73F2E9]
-                py-3
-                text-sm
-                font-semibold
-                text-black
-                transition-colors
-                duration-300
-                hover:bg-white
-              "
-            >
-              Send
-            </button>
+            type="submit"
+            disabled={status === "loading"}
+            className="
+              mt-4
+              w-full
+              rounded-md
+              bg-[#73F2E9]
+              py-3
+              text-sm
+              font-semibold
+              text-black
+              transition-colors
+              duration-300
+              hover:bg-white
+              disabled:cursor-not-allowed
+              disabled:opacity-50
+            "
+          >
+            {status === "loading" ? "Sending..." : "Send"}
+          </button>
 
-            {status && (
+            {status === "berhasil" && (
               <p
                 role="status"
-                className="mt-3 text-xs text-white/80"
+                className="mt-4 rounded-md bg-green-100 px-4 py-3 text-sm text-green-800"
               >
-                {status}
+                {pesan}
+              </p>
+            )}
+
+            {status === "gagal" && (
+              <p
+                role="alert"
+                className="mt-4 rounded-md bg-red-100 px-4 py-3 text-sm text-red-800"
+              >
+                {pesan}
               </p>
             )}
           </form>
