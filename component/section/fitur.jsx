@@ -115,7 +115,7 @@ export default function Features() {
 
               {/* Tombol */}
               <Link
-                href="/features"
+                href="/#features"
                 className="
                   group
                   mt-auto

@@ -46,7 +46,7 @@ export default function Hero() {
             system and a monitoring dashboard.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-6">
-            <Button href="/features">
+            <Button href="/#features">
               Explore
             </Button>
             <ShowreelButton href="/showreel.mp4" />
